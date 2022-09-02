@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Create Your VERY OWN Todolist!</h1>
-    <a href="/login"> Login</a>
-    <a href="/signup"> Signup</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <title>Korean skincare tracker</title>
+  </head>
+  <body>
+    <header>
+      <a href="" class="logo">Korean skincare tracker</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <!-- <img
+          src="https://s3-alpha-sig.figma.com/img/962f/0286/5e15fc3d0778df6af10d6fe4d63ea5d9?Expires=1662940800&Signature=YfyXo9m-mXzjSaAqj-0zcIqoLnhlr5dMcfeoJzyre-8FMS7BI~opiZ-XOK4oALjveEPHJ1z6yxpTLJ1SMp7uxltoeai-5Xs-wd4xtRLONc1mctmMe~XUYiGGhbh3~UkUdqBFzu6NNhD8klLy7xNUrJdiJ7Sg5A7TW2GUQsPrx80nn7Ji2obLFMa2EmSMKZrx1p~XgnTSU5eExTVR8ez43UU3iSpIHgoOPRYDOj7f91kFhjlJYiFoaBDD5FQMusCjykxpxlnsUYpm54W0Xn7ch4XuOrhkMJaTNuItX8wafiCrx7u4CkLRXZ~B5BDktYDU0JG7CyMg1MaAnkZS4~JpUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          alt=""
+        /> -->
+      </section>
+
+      <section class="loginContainer">
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+        %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+        messages.info.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %>
+        <form action="/login" method="POST">
+          <label for="username" class="label-1">Username:</label>
+          <input type="email" name="email" placeholder="Email" />
+          <label for="password" class="label-2">Password</label>
+          <input type="password" name="password" placeholder="Password" />
+          <button type="submit">Login</button>
+          <button type=""><a href="/signup">Sign Up</a></button>
+        </form>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
 </html>
