@@ -5,7 +5,9 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, todosController.getTodos)
 
-router.post('/createTodo', todosController.createTodo)
+router.post('/createMorningTodo', todosController.createMorningTodo)
+
+router.post('/createNightTodo', todosController.createNightTodo)
 
 router.put('/markComplete', todosController.markComplete)
 

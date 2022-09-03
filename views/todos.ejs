@@ -37,36 +37,40 @@
 
     <section id="morning-routine" class="routine">
         <h1>Welcome <%= user.userName %>, here's your morning skincare routine.</h1>
-        <form action="/todos/createTodo" method='POST'>
+        <form action="/todos/createMorningTodo" method='POST'>
             <input type="text" placeholder="Enter Todo Item" name='todoItem'>
             <input type="submit">
         </form>
         <ul>
             <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
+                <% if (el.isMorning) { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                        <span class='del'> Delete </span>
+                    </li>
+                <% } %>
             <% }) %>    
         </ul>
-        <h2><%= user.firstName %> has <%= left %> steps left to do.</h2>
+        <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>
     </section>
 
     <section id="night-routine" class="routine hide">
         <h1>Welcome <%= user.userName %>, here's your evening skincare routine.</h1>
-        <form action="/todos/createTodo" method='POST'>
+        <form action="/todos/createNightTodo" method='POST'>
             <input type="text" placeholder="Enter Todo Item" name='todoItem'>
         <input type="submit">
     </form>
     <ul>
         <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
+            <% if (el.isNight) { %>
+                <li class='todoItem' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                    <span class='del'> Delete </span>
+                </li>
+            <% } %>
         <% }) %>    
     </ul>
-    <h2><%= user.firstName %> has <%= left %> steps left to do.</h2>
+    <h2><%= user.firstName %> has <%= nightLeft %> steps left to do.</h2>
 
     </section>
    
