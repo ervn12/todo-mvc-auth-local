@@ -154,3 +154,45 @@ ul li {
   border-radius: 25px;
   display: inline;
 }
+
+.signUpBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.signUpBody h1 {
+  text-align: center;
+  color: black;
+}
+
+
+.sectionSignUp {
+  display: flex;
+  justify-content: center;
+  background-color: #F8B2B2;
+  width: 90%;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.signUpForm input {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background: #D9D9D9; 
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+input:focus{
+  background: #b5b5b5;
+  outline: none;
+}
