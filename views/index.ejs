@@ -4,22 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/4a9c518b56.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/reset.css" />
+
     <title>Korean skincare tracker</title>
   </head>
   <body>
     <header>
-      <a href="" class="logo">Korean skincare tracker</a>
+      <div class="logo-container">
+        <a href="/" class="logo"
+          ><img
+            class="img-1"
+            src="css/assets/KoreanSkincaregrprt-logo.png"
+            alt="green_leaves_logo"
+        /></a>
+      </div>
     </header>
 
     <main>
-      <section class="hero">
-        <!-- <img
-          src="https://s3-alpha-sig.figma.com/img/962f/0286/5e15fc3d0778df6af10d6fe4d63ea5d9?Expires=1662940800&Signature=YfyXo9m-mXzjSaAqj-0zcIqoLnhlr5dMcfeoJzyre-8FMS7BI~opiZ-XOK4oALjveEPHJ1z6yxpTLJ1SMp7uxltoeai-5Xs-wd4xtRLONc1mctmMe~XUYiGGhbh3~UkUdqBFzu6NNhD8klLy7xNUrJdiJ7Sg5A7TW2GUQsPrx80nn7Ji2obLFMa2EmSMKZrx1p~XgnTSU5eExTVR8ez43UU3iSpIHgoOPRYDOj7f91kFhjlJYiFoaBDD5FQMusCjykxpxlnsUYpm54W0Xn7ch4XuOrhkMJaTNuItX8wafiCrx7u4CkLRXZ~B5BDktYDU0JG7CyMg1MaAnkZS4~JpUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-          alt=""
-        /> -->
-      </section>
+      <section class="hero"></section>
 
       <section class="loginContainer">
         <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
@@ -39,6 +48,45 @@
         </form>
       </section>
     </main>
+
+    <section class="container">
+      <section class="aboutContainer">
+        <p>
+          <strong>Korean skincare has become a global sensation,</strong> if you
+          one the million that love having dewy glowing skin and want to keep
+          track of your products fret no more! With regimen tracker you will be
+          able to keep track of your KSP (Korean skincare products) so you never
+          miss a step. With the Korean Skincare tracker you can create a list of
+          the products in the order that it is layered and check it off the list
+          and move on to the next one, click reset when you start again the next
+          morning, it's that simple! Never miss a step again.
+        </p>
+      </section>
+      <section class="exampleContainer">
+        <ul>
+          <li>
+            <p>oil cleaning</p>
+            <button><i class="fa-sharp fa-solid fa-check"></i></button>
+          </li>
+          <li>
+            <p>foam clearning</p>
+            <button><i class="fa-sharp fa-solid fa-check"></i></button>
+          </li>
+          <li>
+            <p>toner</p>
+            <button></button>
+          </li>
+          <li>
+            <p>essense</p>
+            <button></button>
+          </li>
+          <li>
+            <p>sunscreen</p>
+            <button></button>
+          </li>
+        </ul>
+      </section>
+    </section>
 
     <footer></footer>
   </body>

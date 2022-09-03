@@ -1,4 +1,4 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,12 +6,57 @@
 
 :root {
   font-size: 16px;
-} */
+}
 
 h1 {
   color: red;
 }
 header {
+  display: flex;
+  border: 2px solid black;
+  justify-content: space-between;
+  background-color: grey;
+  width: 100%;
+  height: 100px;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  max-width: 20rem;
+}
+
+.logo-container img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.logOut {
+  display: flex;
+  align-items: flex-end;
+  border: 2px solid red;
+}
+
+.logOut a {
+  padding-left: 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgb(20, 19, 19);
+  margin-right: 1rem;
+}
+
+.logOut a:hover {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  color: white;
+}
+
+footer {
   background-color: grey;
   width: 100%;
   height: 100px;
@@ -34,9 +79,9 @@ main {
   background: url("https://s3-alpha-sig.figma.com/img/962f/0286/5e15fc3d0778df6af10d6fe4d63ea5d9?Expires=1662940800&Signature=YfyXo9m-mXzjSaAqj-0zcIqoLnhlr5dMcfeoJzyre-8FMS7BI~opiZ-XOK4oALjveEPHJ1z6yxpTLJ1SMp7uxltoeai-5Xs-wd4xtRLONc1mctmMe~XUYiGGhbh3~UkUdqBFzu6NNhD8klLy7xNUrJdiJ7Sg5A7TW2GUQsPrx80nn7Ji2obLFMa2EmSMKZrx1p~XgnTSU5eExTVR8ez43UU3iSpIHgoOPRYDOj7f91kFhjlJYiFoaBDD5FQMusCjykxpxlnsUYpm54W0Xn7ch4XuOrhkMJaTNuItX8wafiCrx7u4CkLRXZ~B5BDktYDU0JG7CyMg1MaAnkZS4~JpUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA")
     no-repeat;
   background-size: cover;
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
   padding: 2rem;
-  width: 60vw;
+  width: 70vw;
   height: 50vh;
 }
 
@@ -48,14 +93,64 @@ main {
 
 .loginContainer {
   background: lightgreen;
-  width: 40vw;
-  float: right;
-  display: flex;
-  height: 50%;
+  width: 30vw;
+  height: 50vh;
   padding: 2rem;
+  margin: 2rem 2rem 0 0;
 }
 
 .loginContainer form label {
   display: inline-block;
   width: 100%;
+}
+
+.loginContainer button {
+  display: block;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.aboutContainer {
+  padding: 2rem;
+  width: 60%;
+}
+
+.exampleContainer {
+  background: grey;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+.exampleContainer li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.exampleContainer p {
+  background: lightgrey;
+  height: 25px;
+  width: 150px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.exampleContainer button {
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 25px;
+  display: inline;
 }
