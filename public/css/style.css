@@ -196,3 +196,28 @@ input:focus{
   background: #b5b5b5;
   outline: none;
 }
+
+.routine-selector-container {
+  display: flex;
+  justify-content: center;
+}
+
+.routine-selector-container  h2 {
+  padding: 1rem;
+  margin: 1rem 0;
+  cursor: default;
+}
+
+.routine-selector-container  h2:first-child {
+  border-right: 1px solid black;
+}
+
+.routine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}

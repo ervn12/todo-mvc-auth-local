@@ -29,8 +29,14 @@
     </header>
     <!-- End of header -->
 
-    <section class="morning-routine">
-        <h1>Welcome <%= user.firstName %>, here's your morning skincare routine.</h1>
+    <section class="routine-selector-container">
+        <h2 class="morning-selected">morning</h2>
+        <h2 class="night-selected">evening</h2>
+    </section>
+
+
+    <section id="morning-routine" class="routine">
+        <h1>Welcome <%= user.userName %>, here's your morning skincare routine.</h1>
         <form action="/todos/createTodo" method='POST'>
             <input type="text" placeholder="Enter Todo Item" name='todoItem'>
             <input type="submit">
@@ -46,8 +52,8 @@
         <h2><%= user.firstName %> has <%= left %> steps left to do.</h2>
     </section>
 
-    <section class="night-routine">
-        <h1>Welcome <%= user.firstName %>, here's your evening skincare routine.</h1>
+    <section id="night-routine" class="routine hide">
+        <h1>Welcome <%= user.userName %>, here's your evening skincare routine.</h1>
         <form action="/todos/createTodo" method='POST'>
             <input type="text" placeholder="Enter Todo Item" name='todoItem'>
         <input type="submit">
