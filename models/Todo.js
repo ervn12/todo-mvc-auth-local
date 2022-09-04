@@ -12,7 +12,15 @@ const TodoSchema = new mongoose.Schema({
  userId: {
   type: String,
   required: true
- }
+ },
+ isNight: { 
+     type: Boolean,
+     required: true,
+ },
+ isMorning: { 
+    type: Boolean,
+    required: true,
+}
 })
 
 // const TodoNtSchema = new mongoose.Schema({

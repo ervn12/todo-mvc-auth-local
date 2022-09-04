@@ -67,3 +67,17 @@ async function markIncomplete(){
         console.log(err)
     }
 }
+
+document.querySelector('.morning-selected').addEventListener('click', showMorningRoutine);
+document.querySelector('.night-selected').addEventListener('click', showNightRoutine);
+
+function showMorningRoutine() {
+    document.querySelector('#morning-routine').classList.remove('hide')
+    document.querySelector('#night-routine').classList.add('hide')
+}
+
+function showNightRoutine() {
+    document.querySelector('#night-routine').classList.remove('hide')
+    document.querySelector('#morning-routine').classList.add('hide')
+}
+

@@ -4,23 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sign Up</title>
   </head>
-  <body>
-    <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-    <div class="alert alert-danger"><%= el.msg %></div>
-    <% }) %> <% } %>
-    <form action="/signup" method="POST">
-      <input type="text" name="firstName" placeholder="First Name" />
-      <input type="text" name="userName" placeholder="User Name" />
-      <input type="email" name="email" placeholder="Email" />
-      <input type="password" name="password" placeholder="Password" />
-      <input
-        type="password"
-        name="confirmPassword"
-        placeholder="Confirm Password"
-      />
-      <input type="submit" />
-    </form>
+  <body class="signUpBody">
+    <h1>Sign Up</h1>
+    <section class="sectionSignUp">
+      <% if (locals.messages.errors) { %> 
+        <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> 
+      <% } %>
+      <form class="signUpForm" method="post"action="/signup" method="POST">
+        <input type="text" name="firstName" placeholder="First Name" />
+        <input type="text" name="userName" placeholder="User Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <input type="submit" />
+      </form>    
+    </section>
   </body>
 </html>
