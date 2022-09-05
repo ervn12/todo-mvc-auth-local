@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 16px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
 body {
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
 }
@@ -12,10 +20,20 @@ body {
   display: grid;
   grid-template-rows: 10% 80% 10%;
   grid-template-areas:
-        'header'
-        'main'
-        'footer';
+    "header"
+    "main"
+    "footer";
   height: 100vh;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  max-width: 1120;
+  margin: 0 auto;
+  padding-top: 2rem;
+  min-height: calc(100vh - (6rem + 6rem));
 }
 
 header {
@@ -31,27 +49,23 @@ footer {
   grid-area: footer;
 }
 
-:root {
-  font-size: 16px;
-}
-
 h1 {
   color: red;
   text-align: center;
 }
+
 header {
   display: flex;
-  border: 2px solid black;
-  justify-content: space-between;
+  justify-content: center;
   background-color: grey;
   width: 100%;
-  height: 100%;
+  height: 6rem;
 }
+
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
   max-width: 20rem;
 }
 
@@ -64,7 +78,6 @@ header {
 .logOut {
   display: flex;
   align-items: flex-end;
-  border: 2px solid red;
 }
 
 .logOut a {
@@ -87,14 +100,15 @@ header {
 footer {
   background-color: grey;
   width: 100%;
-  height: 100%;
+  height: 6rem;
+  text-align: center;
+  padding-top: 2rem;
 }
 .completed {
   text-decoration: line-through;
   color: gray;
 }
 .not {
-
 }
 
 main {
@@ -119,12 +133,96 @@ main {
   object-fit: cover;
 }
 
+/* LOGIN and SIGNUP FORM */
 .loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: lightgreen;
   width: 30vw;
   height: 50vh;
   padding: 2rem;
   margin: 2rem 2rem 0 0;
+}
+
+.form-1 {
+  /* Size and position */
+  width: 340px;
+  margin: 60px auto 30px;
+  padding: 15px;
+  position: relative;
+
+  /* Styles */
+  background: #fffaf6;
+  border-radius: 4px;
+  color: #7e7975;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.2),
+    0 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.form-1 h1 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #bdb5aa;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ebe6e2;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.form-1 h1 .log-in,
+.form-1 h1 .sign-up {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.form-1 h1 .log-in {
+  color: #6c6763;
+  padding-right: 2px;
+}
+
+.form-1 h1 .sign-up {
+  color: #6c6763;
+  padding-left: 2px;
+}
+
+.form-1 .field {
+  flex-wrap: nowrap;
+  position: relative; /* For the icon positioning */
+  width: 100%;
+  height: auto;
+}
+
+.form-1 .field i {
+  /* Size and position */
+  left: 0px;
+  top: 0px;
+  position: relative;
+  height: 36px;
+  width: 36px;
+
+  /* Line */
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.7);
+
+  /* Styles */
+  color: #777777;
+  text-align: center;
+  line-height: 42px;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+.form-1 .submit {
+  /* Size and position */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 17px;
+  right: -25px;
+  padding: 10px;
 }
 
 .loginContainer form label {
@@ -150,9 +248,10 @@ main {
 
 .exampleContainer {
   background: grey;
-  width: 40%;
+  width: 30vw;
   display: flex;
   justify-content: center;
+  margin-left: 27.5rem;
 }
 
 ul li {
@@ -195,11 +294,10 @@ ul li {
   color: black;
 }
 
-
 .sectionSignUp {
   display: flex;
   justify-content: center;
-  background-color: #F8B2B2;
+  background-color: #f8b2b2;
   width: 90%;
 }
 
@@ -215,12 +313,12 @@ ul li {
   width: 100%;
   border: none;
   border-radius: 3px;
-  background: #D9D9D9; 
+  background: #d9d9d9;
   padding: 1rem;
   margin-bottom: 0.5rem;
 }
 
-input:focus{
+input:focus {
   background: #b5b5b5;
   outline: none;
 }
@@ -230,13 +328,13 @@ input:focus{
   justify-content: center;
 }
 
-.routine-selector-container  h2 {
+.routine-selector-container h2 {
   padding: 1rem;
   margin: 1rem 0;
   cursor: default;
 }
 
-.routine-selector-container  h2:first-child {
+.routine-selector-container h2:first-child {
   border-right: 1px solid black;
 }
 
@@ -247,7 +345,7 @@ input:focus{
 }
 
 .checklist-container {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   padding: 2rem;
 }
 
@@ -280,7 +378,6 @@ input:focus{
   border-radius: 11px;
   padding-left: 1rem;
   cursor: pointer;
-
 }
 
 .todoItem span {
@@ -297,7 +394,7 @@ input:focus{
 }
 
 #morning-routine {
-  background-color: #FEFFDC;
+  background-color: #feffdc;
 }
 
 #morning-routine h1 {
@@ -305,7 +402,7 @@ input:focus{
 }
 
 #night-routine {
-  background-color: #272C47;
+  background-color: #272c47;
 }
 
 #night-routine h1 {
@@ -313,15 +410,15 @@ input:focus{
 }
 
 .fa-circle {
-  color: #B1B1B1
+  color: #b1b1b1;
 }
 
 .fa-circle-check {
-  color: #453E3E;
+  color: #453e3e;
 }
 
 .fa-trash-can {
-  color: #453E3E;
+  color: #453e3e;
 }
 
 .fa-sun {
@@ -335,4 +432,3 @@ input:focus{
 .hide {
   display: none;
 }
-

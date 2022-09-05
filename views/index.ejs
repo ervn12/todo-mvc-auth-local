@@ -10,9 +10,12 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
 
@@ -41,13 +44,25 @@
         messages.info.forEach( el => { %>
         <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %> <% } %>
-        <form action="/login" method="POST">
-          <label for="username" class="label-1">Username:</label>
-          <input type="email" name="email" placeholder="Email" />
-          <label for="password" class="label-2">Password</label>
-          <input type="password" name="password" placeholder="Password" />
-          <button type="submit">Login</button>
-          <button type=""><a href="/signup">Sign Up</a></button>
+        <form action="/login" method="POST" class="form-1">
+          <h1>
+            <span class="log-in">Log in</span> or
+            <span class="sign-up">sign up</span>
+          </h1>
+          <p class="field">
+            <label for="username" class="label-1"> </label>
+            <i class="fa-solid fa-user"></i>
+            <input type="email" name="email" placeholder="Email" />
+          </p>
+          <p class="field">
+            <label for="password" class="label-2"></label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
+          </p>
+          <p class="submit">
+            <button type="submit">Login</button>
+            <button type=""><a href="/signup">Sign Up</a></button>
+          </p>
         </form>
       </section>
     </main>
@@ -91,6 +106,9 @@
       </section>
     </section>
 
-    <footer></footer>
+    <footer>
+      <i class="fa-regular fa-copyright"></i>
+      <span>Group project 100Devs 2022</span>
+    </footer>
   </body>
 </html>
