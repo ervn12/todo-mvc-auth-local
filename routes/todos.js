@@ -3,9 +3,13 @@ const router = express.Router()
 const todosController = require('../controllers/todos') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get('/morningTodos', ensureAuth, todosController.getMorningTodos)
 
-router.post('/createTodo', todosController.createTodo)
+router.get('/nightTodos', ensureAuth, todosController.getNightTodos)
+
+router.post('/createMorningTodo', todosController.createMorningTodo)
+
+router.post('/createNightTodo', todosController.createNightTodo)
 
 router.put('/markComplete', todosController.markComplete)
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://kit.fontawesome.com/4a9c518b56.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/style.css" />
+      
+        <title>Korean skincare tracker</title>
+      </head>
+      
+<body class="routine-body">
+    <header>
+     <!-- Header -->
+        <div class="logo-container">
+            <a href="/" class="logo"><img src="/css/assets/KoreanSkincaregrprt-logo.png" alt=""></a>
+        
+            
+        </div>
+       
+        <div class="logOut">
+         <a href="/logout">Logout</a>
+        </div>
+        
+    </header>
+    <!-- End of header -->
+
+    <section id="morning-routine" class="routine">
+        <section class="routine-selector-container">
+            <h2 class="morning-selected"><a href="/todos/morningTodos"><i class="fa-solid fa-sun"></i></a></h2>
+            <h2 class="night-selected"><a href="/todos/nightTodos"><i class="fa-solid fa-moon"></i></a></h2>
+        </section>
+    
+        <h1>Welcome <%= user.userName %>, here's your morning skincare routine.</h1>
+        <section class="checklist-container">
+            <ul>
+                <% todos.forEach( el => { %>
+                    <% if (el.isMorning) { %>
+                        <li class='todoItem' data-id='<%=el._id%>'>
+                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                            <i class="fa-solid <%= el.completed === true ? 'fa-circle-check' : 'fa-circle' %>"></i>
+                            <span class='del'><i class="fa-solid fa-trash-can"></i></span>
+                        </li>
+                    <% } %>
+                <% }) %>    
+            </ul>
+            <form action="/todos/createMorningTodo" method='POST'>
+                <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+            </form>    
+        </section>
+
+        <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>
+    </section>
+
+    <footer></footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>
