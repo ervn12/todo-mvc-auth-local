@@ -311,6 +311,7 @@ ul li {
   flex-direction: column;
   align-items: center;
   margin: 2rem;
+  /* width: 70%; */
 }
 
 .signUpBody h1 {
@@ -321,7 +322,7 @@ ul li {
 .sectionSignUp {
   display: flex;
   justify-content: center;
-  background-color: #f8b2b2;
+  /* background-color: #f8b2b2; */
   width: 90%;
 }
 
@@ -329,8 +330,20 @@ ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  width: 40%;
   padding: 2rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.2),
+    0 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.signUpForm .submit input {
+  display: block;
+  margin: 10px;
+  cursor: pointer;
+  padding: 4px;
+  background-color: black;
+  color: white;
 }
 
 .signUpForm input {
