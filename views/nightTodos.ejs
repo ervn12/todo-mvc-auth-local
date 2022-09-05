@@ -58,8 +58,15 @@
                 <button type="submit"><i class="fa-solid fa-plus"></i></button>
             </form>
         </section>
-        
-        <h2><%= user.firstName %> has <%= nightLeft %> steps left to do.</h2>
+        <section class="steps-left">
+            <h2><%= user.firstName %> has <%= nightLeft %> steps left to do.</h2>
+            <span class="reset">
+                <button type="">
+                <a href="/todos/resetTodo">Reset</a>
+            </button>
+            </span>
+        </section>
+
 
     </section>
 
