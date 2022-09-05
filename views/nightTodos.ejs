@@ -31,14 +31,15 @@
         
     </header>
     <!-- End of header -->
-
+   
+    <main class="page">
     <section id="night-routine" class="routine">
         <section class="routine-selector-container">
             <h2 class="morning-selected"><a href="/todos/morningTodos"><i class="fa-solid fa-sun"></i></a></h2>
             <h2 class="night-selected"><a href="/todos/nightTodos"><i class="fa-solid fa-moon"></i></a></h2>
         </section>
     
-        <h1>Welcome <%= user.firstName %>, here's your evening skincare routine.</h1>
+        <h1 class="todoRoutine">Welcome <%= user.firstName %>, here's your evening skincare routine.</h1>
 
         <section class="checklist-container">
             <ul>
@@ -61,8 +62,9 @@
         <h2><%= user.firstName %> has <%= nightLeft %> steps left to do.</h2>
 
     </section>
-   
-    <footer></footer>
+    </main>
+    <footer> <i class="fa-regular fa-copyright"></i>
+      <span>Group project 100Devs 2022</span></footer>
     <script src="/js/main.js"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@ body {
   width: 90vw;
   max-width: 1120;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding: 2rem;
   min-height: calc(100vh - (6rem + 6rem));
 }
 
@@ -52,6 +52,9 @@ footer {
 h1 {
   color: red;
   text-align: center;
+}
+todoRoutine {
+  padding: 0 1rem;
 }
 
 header {
@@ -232,6 +235,11 @@ main {
 
 .loginContainer button {
   display: block;
+  margin: 10px;
+  cursor: pointer;
+  padding: 4px;
+  background-color: black;
+  color: white;
 }
 
 .container {
