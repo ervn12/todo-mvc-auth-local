@@ -40,7 +40,8 @@
             <h2 class="night-selected"><a href="/todos/nightTodos"><i class="fa-solid fa-moon"></i></a></h2>
         </section>
     
-        <h1>Welcome <%= user.firstName %>, here's your morning skincare routine.</h1>
+        <h1 class="todoRoutine">Welcome <%= user.firstName %>, here's your morning skincare routine.</h1>
+        
         <section class="checklist-container">
             <ul>
                 <% todos.forEach( el => { %>
@@ -58,8 +59,16 @@
                 <button type="submit"><i class="fa-solid fa-plus"></i></button>
             </form>    
         </section>
+        <section class="steps-left">
+            <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>
+            <span class="reset">
+                <button type="">
+                <a href="/reset">Sign Up</a>
+            </button>
+            </span>
 
-        <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>
+        </section>
+
     </section>
   </main>
   
