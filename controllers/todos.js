@@ -1,13 +1,22 @@
 const Todo = require('../models/Todo')
 
 module.exports = {
-    getTodos: async (req,res)=>{
+    getMorningTodos: async (req,res)=>{
         console.log(req.user)
         try{
             const todoItems = await Todo.find({userId:req.user.id})
             const morningItemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false, isMorning: true})
+            res.render('morningTodos.ejs', {todos: todoItems, user: req.user, morningLeft: morningItemsLeft,})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getNightTodos: async (req,res)=>{
+        console.log(req.user)
+        try{
+            const todoItems = await Todo.find({userId:req.user.id})
             const nightItemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false, isNight: true})
-            res.render('todos.ejs', {todos: todoItems, user: req.user, morningLeft: morningItemsLeft, nightLeft: nightItemsLeft,})
+            res.render('nightTodos.ejs', {todos: todoItems, user: req.user, nightLeft: nightItemsLeft,})
         }catch(err){
             console.log(err)
         }
@@ -16,7 +25,7 @@ module.exports = {
         try{
             await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id, isNight: false, isMorning: true})
             console.log('Todo has been added!')
-            res.redirect('/todos')
+            res.redirect('/todos/morningTodos')
         }catch(err){
             console.log(err)
         }
@@ -25,7 +34,7 @@ module.exports = {
         try{
             await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id, isNight: true, isMorning: false})
             console.log('Todo has been added!')
-            res.redirect('/todos')
+            res.redirect('/todos/nightTodos')
         }catch(err){
             console.log(err)
         }

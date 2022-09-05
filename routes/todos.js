@@ -3,7 +3,9 @@ const router = express.Router()
 const todosController = require('../controllers/todos') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get('/morningTodos', ensureAuth, todosController.getMorningTodos)
+
+router.get('/nightTodos', ensureAuth, todosController.getNightTodos)
 
 router.post('/createMorningTodo', todosController.createMorningTodo)
 
