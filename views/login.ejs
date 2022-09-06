@@ -4,20 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    
+    <script
+    src="https://kit.fontawesome.com/4a9c518b56.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-    <div class="alert alert-danger"><%= el.msg %></div>
-    <% }) %> <% } %> <% if (locals.messages.info) { %> <% messages.info.forEach(
-    el => { %>
-    <div class="alert alert-danger"><%= el.msg %></div>
-    <% }) %> <% } %>
-    <form action="/login" method="POST">
-      <input type="email" name="email" placeholder="Email" />
-      <input type="password" name="password" placeholder="Password" />
-      <input type="submit" />
-    </form>
+    <header>
+      <div class="logo-container">
+        <a href="/" class="logo"
+          ><img
+            class="img-1"
+            src="css/assets/KoreanSkincaregrprt-logo.png"
+            alt="green_leaves_logo"
+        /></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero"></section>
+
+      <section class="loginContainer">
+        <form action="/login" method="POST" class="form-1">
+          <h1>
+            <span class="log-in">Log in</span>  
+          </h1>
+          <p class="field">
+            <label for="username" class="label-1"> </label>
+            <i class="fa-solid fa-user"></i>
+            <input type="email" name="email" placeholder="Email" />
+          </p>
+          <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+            %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %> <% } %>
+          <p class="field">
+            <label for="password" class="label-2"></label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
+          </p>
+          <% if (locals.messages.info) { %> <%
+            messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %> <% } %>
+          <p class="submit">
+            <button type="submit">Login</button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+  <section class="loginFooter">
+    <footer>
+      <i class="fa-regular fa-copyright"></i>
+      <span>Group project 100Devs 2022</span>
+    </footer>
+  </section
   </body>
 </html>
