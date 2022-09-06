@@ -57,13 +57,15 @@
             <form action="/todos/createMorningTodo" method='POST'>
                 <input type="text" placeholder="Enter Todo Item" name='todoItem'>
                 <button type="submit"><i class="fa-solid fa-plus"></i></button>
+              
             </form>    
         </section>
         <section class="steps-left">
-            <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>
+            <h2><%= user.firstName %> has <%= morningLeft %> steps left to do.</h2>          
+
             <span class="reset">
                 <button type="">
-                <a href="/todos/resetTodo">Reset</a>
+                <a action="/todos/resetTodo">Reset</a>
             </button>
             </span>
 
